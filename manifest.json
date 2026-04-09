@@ -1,0 +1,9 @@
+{
+  "name": "Requirementflow",
+  "short_name": "ReqFlow",
+  "start_url": "/Requirementflow/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "icons": []
+}

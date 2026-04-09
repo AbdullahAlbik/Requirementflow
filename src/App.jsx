@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/toaster"
+import { useEffect } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
@@ -36,6 +37,12 @@ import Berechtigungen from '@/pages/Berechtigungen';
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
 
+  useEffect(() => {
+    if (authError?.type === 'auth_required') {
+      navigateToLogin?.();
+    }
+  }, [authError, navigateToLogin]);
+
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
       <div className="fixed inset-0 flex items-center justify-center">
@@ -48,8 +55,22 @@ const AuthenticatedApp = () => {
     if (authError.type === 'user_not_registered') {
       return <UserNotRegisteredError />;
     } else if (authError.type === 'auth_required') {
-      navigateToLogin();
-      return null;
+      return (
+        <div className="fixed inset-0 flex items-center justify-center p-6">
+          <div className="max-w-md w-full bg-white border border-gray-200 rounded-lg p-5 text-center space-y-3">
+            <h2 className="text-lg font-semibold text-gray-900">Anmeldung erforderlich</h2>
+            <p className="text-sm text-gray-600">
+              Sie werden zur Anmeldung weitergeleitet. Falls keine Weiterleitung erfolgt, klicken Sie bitte auf den Button.
+            </p>
+            <button
+              onClick={() => navigateToLogin?.()}
+              className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md hover:bg-blue-800"
+            >
+              Zur Anmeldung
+            </button>
+          </div>
+        </div>
+      );
     }
   }
 
