@@ -8,7 +8,24 @@
     <title>Requirementflowapp</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="root">
+      <div id="boot-fallback" style="display:block;padding:24px;font-family:Arial,Helvetica,sans-serif;color:#334155;">
+        <h2 style="margin:0 0 8px 0;font-size:20px;">Requirementflow wird geladen…</h2>
+        <p style="margin:0;font-size:14px;">
+          Falls diese Meldung länger sichtbar bleibt, ist die GitHub-Pages-Konfiguration noch nicht korrekt
+          (empfohlen: <strong>Settings → Pages → Source: GitHub Actions</strong>).
+        </p>
+      </div>
+    </div>
+    <script>
+      window.showBootFallback = function () {
+        const el = document.getElementById('boot-fallback');
+        if (el) el.style.display = 'block';
+      };
+      setTimeout(function () {
+        if (!window.__REQFLOW_BOOTED__) window.showBootFallback();
+      }, 2500);
+    </script>
+    <script type="module" src="/src/main.jsx" onerror="window.showBootFallback()"></script>
   </body>
 </html>
