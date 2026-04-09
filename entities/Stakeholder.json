@@ -1,0 +1,70 @@
+{
+  "name": "Stakeholder",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "primaer",
+        "sekundaer",
+        "tertiaer"
+      ],
+      "default": "primaer"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "persona": {
+      "type": "string"
+    },
+    "influence": {
+      "type": "string",
+      "enum": [
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "interest": {
+      "type": "string",
+      "enum": [
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "internal_external": {
+      "type": "string",
+      "enum": [
+        "intern",
+        "extern"
+      ],
+      "default": "intern"
+    },
+    "user_group": {
+      "type": "string"
+    },
+    "is_misuser": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "workspace_id",
+    "name"
+  ]
+}

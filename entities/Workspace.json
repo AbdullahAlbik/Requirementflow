@@ -1,0 +1,57 @@
+{
+  "name": "Workspace",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Eindeutiger Workspace-Key z.B. PROJ1"
+    },
+    "name": {
+      "type": "string",
+      "description": "Workspace-Name"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "projekt",
+        "produkt"
+      ],
+      "default": "projekt"
+    },
+    "mandant_id": {
+      "type": "string",
+      "description": "Zugeh\u00f6riger Mandant"
+    },
+    "description": {
+      "type": "string"
+    },
+    "owner_email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aktiv",
+        "archiviert"
+      ],
+      "default": "aktiv"
+    },
+    "project_goals": {
+      "type": "string"
+    },
+    "milestones": {
+      "type": "string"
+    },
+    "vision": {
+      "type": "string"
+    },
+    "releases": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "key",
+    "name",
+    "mode"
+  ]
+}

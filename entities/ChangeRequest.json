@@ -1,0 +1,66 @@
+{
+  "name": "ChangeRequest",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "impact": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "neu",
+        "in_analyse",
+        "genehmigt",
+        "abgelehnt",
+        "umgesetzt",
+        "abgeschlossen"
+      ],
+      "default": "neu"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "kritisch",
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "requester": {
+      "type": "string"
+    },
+    "decision_by": {
+      "type": "string"
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "requirement_ids": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "title"
+  ]
+}

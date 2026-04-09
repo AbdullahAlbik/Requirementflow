@@ -1,0 +1,51 @@
+{
+  "name": "Baseline",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "entwurf",
+        "freigegeben",
+        "archiviert"
+      ],
+      "default": "entwurf"
+    },
+    "requirement_ids": {
+      "type": "string",
+      "description": "Kommagetrennte Requirement-IDs in dieser Baseline"
+    },
+    "requirement_count": {
+      "type": "integer"
+    },
+    "created_by_name": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approved_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "name"
+  ]
+}

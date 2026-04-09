@@ -1,0 +1,36 @@
+{
+  "name": "Mandant",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Eindeutiger Mandanten-Key z.B. FIRMA1"
+    },
+    "name": {
+      "type": "string",
+      "description": "Firmenname"
+    },
+    "description": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aktiv",
+        "inaktiv",
+        "gesperrt"
+      ],
+      "default": "aktiv"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "key",
+    "name"
+  ]
+}

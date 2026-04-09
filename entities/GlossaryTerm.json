@@ -1,0 +1,34 @@
+{
+  "name": "GlossaryTerm",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "term": {
+      "type": "string"
+    },
+    "definition": {
+      "type": "string"
+    },
+    "abbreviation": {
+      "type": "string"
+    },
+    "synonyms": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "term"
+  ]
+}

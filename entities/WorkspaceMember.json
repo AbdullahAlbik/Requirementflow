@@ -1,0 +1,45 @@
+{
+  "name": "WorkspaceMember",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string",
+      "description": "ID des Workspaces"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "E-Mail des Nutzers"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Name des Nutzers"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "workspace_admin",
+        "member"
+      ],
+      "default": "member",
+      "description": "Rolle im Workspace"
+    },
+    "invited_by": {
+      "type": "string",
+      "description": "E-Mail des Einladenden"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "aktiv",
+        "eingeladen",
+        "deaktiviert"
+      ],
+      "default": "eingeladen"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "user_email",
+    "role"
+  ]
+}

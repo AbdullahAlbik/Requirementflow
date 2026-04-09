@@ -1,0 +1,43 @@
+{
+  "name": "SystemSource",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "relevance": {
+      "type": "string",
+      "enum": [
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "access_info": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "name"
+  ]
+}

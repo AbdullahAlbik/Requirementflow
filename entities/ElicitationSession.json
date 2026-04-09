@@ -1,0 +1,65 @@
+{
+  "name": "ElicitationSession",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "session_type": {
+      "type": "string",
+      "enum": [
+        "interview",
+        "workshop",
+        "brainstorming",
+        "beobachtung",
+        "fragebogen",
+        "prototyping",
+        "sonstige"
+      ],
+      "default": "interview"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "participants": {
+      "type": "string",
+      "description": "Kommagetrennte Teilnehmer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "geplant",
+        "durchgefuehrt",
+        "ausgewertet",
+        "abgeschlossen"
+      ],
+      "default": "geplant"
+    },
+    "goals": {
+      "type": "string"
+    },
+    "results": {
+      "type": "string"
+    },
+    "open_points": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "moderator": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "title"
+  ]
+}

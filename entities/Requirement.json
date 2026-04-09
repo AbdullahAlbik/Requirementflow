@@ -1,0 +1,145 @@
+{
+  "name": "Requirement",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string",
+      "description": "z.B. PROJ1-REQ-0001"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "acceptance_criteria": {
+      "type": "string"
+    },
+    "req_type": {
+      "type": "string",
+      "enum": [
+        "funktional",
+        "qualitaet",
+        "randbedingung",
+        "sonstige"
+      ],
+      "default": "funktional"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in_bearbeitung",
+        "in_pruefung",
+        "freigegeben",
+        "geaendert",
+        "zurueckgewiesen",
+        "geloescht",
+        "umgesetzt",
+        "getestet",
+        "abgeschlossen"
+      ],
+      "default": "in_bearbeitung"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "kritisch",
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "stability": {
+      "type": "string",
+      "enum": [
+        "stabil",
+        "volatil",
+        "unbekannt"
+      ],
+      "default": "unbekannt"
+    },
+    "criticality": {
+      "type": "string",
+      "enum": [
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "source": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "stakeholder",
+        "dokument",
+        "system",
+        "session",
+        "sonstige"
+      ],
+      "default": "sonstige"
+    },
+    "source_ref_id": {
+      "type": "string"
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "author_email": {
+      "type": "string"
+    },
+    "release_wanted": {
+      "type": "string"
+    },
+    "release_planned": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string",
+      "description": "Kommagetrennte Tags"
+    },
+    "version": {
+      "type": "string",
+      "default": "1.0"
+    },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "offen",
+        "in_review",
+        "validiert",
+        "abgelehnt"
+      ],
+      "default": "offen"
+    },
+    "quality_score": {
+      "type": "number"
+    },
+    "quality_hints": {
+      "type": "string"
+    },
+    "effort_days": {
+      "type": "number"
+    },
+    "change_reason": {
+      "type": "string"
+    },
+    "custom_fields": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "title",
+    "req_type"
+  ]
+}

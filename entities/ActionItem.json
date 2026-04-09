@@ -1,0 +1,62 @@
+{
+  "name": "ActionItem",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "session",
+        "review",
+        "conflict",
+        "sonstige"
+      ],
+      "default": "sonstige"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "assignee": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "offen",
+        "in_bearbeitung",
+        "erledigt",
+        "abgebrochen"
+      ],
+      "default": "offen"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "kritisch",
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "title"
+  ]
+}

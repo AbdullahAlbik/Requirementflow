@@ -1,0 +1,44 @@
+{
+  "name": "TraceLink",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Requirement ID (Quelle)"
+    },
+    "source_uid": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string",
+      "description": "Requirement ID (Ziel)"
+    },
+    "target_uid": {
+      "type": "string"
+    },
+    "link_type": {
+      "type": "string",
+      "enum": [
+        "verfeinert_durch",
+        "abgeleitet_von",
+        "ersetzt",
+        "realisiert_durch",
+        "getestet_durch",
+        "konfligiert_mit",
+        "haengt_ab_von"
+      ],
+      "default": "abgeleitet_von"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "source_id",
+    "target_id"
+  ]
+}

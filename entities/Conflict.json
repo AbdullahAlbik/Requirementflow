@@ -1,0 +1,79 @@
+{
+  "name": "Conflict",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "conflict_type": {
+      "type": "string",
+      "enum": [
+        "widerspruch",
+        "ueberlappung",
+        "luecke",
+        "inkonsistenz",
+        "priorisierung",
+        "sonstige"
+      ],
+      "default": "widerspruch"
+    },
+    "description": {
+      "type": "string"
+    },
+    "requirement_ids": {
+      "type": "string",
+      "description": "Kommagetrennte Requirement-IDs"
+    },
+    "stakeholder_ids": {
+      "type": "string",
+      "description": "Beteiligte Stakeholder"
+    },
+    "solution_proposal": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "offen",
+        "in_analyse",
+        "geloest",
+        "akzeptiert",
+        "eskaliert"
+      ],
+      "default": "offen"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "decided_by": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "kritisch",
+        "hoch",
+        "mittel",
+        "niedrig"
+      ],
+      "default": "mittel"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "title"
+  ]
+}

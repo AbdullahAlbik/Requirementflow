@@ -1,0 +1,53 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "entity_uid": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "erstellt",
+        "geaendert",
+        "geloescht",
+        "status_geaendert",
+        "freigegeben",
+        "abgelehnt"
+      ],
+      "default": "geaendert"
+    },
+    "field_name": {
+      "type": "string"
+    },
+    "old_value": {
+      "type": "string"
+    },
+    "new_value": {
+      "type": "string"
+    },
+    "change_reason": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "user_name": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "entity_type",
+    "action"
+  ]
+}

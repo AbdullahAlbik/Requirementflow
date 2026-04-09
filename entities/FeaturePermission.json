@@ -1,0 +1,43 @@
+{
+  "name": "FeaturePermission",
+  "type": "object",
+  "properties": {
+    "feature": {
+      "type": "string",
+      "description": "Feature key (e.g. anforderungen_anlegen)"
+    },
+    "target_role": {
+      "type": "string",
+      "enum": [
+        "general_admin",
+        "workspace_admin",
+        "member"
+      ],
+      "description": "Rolle, f\u00fcr die diese Berechtigung gilt"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Ob das Feature aktiviert ist"
+    },
+    "mandant_id": {
+      "type": "string",
+      "description": "Mandanten-Scope (leer = global)"
+    },
+    "workspace_id": {
+      "type": "string",
+      "description": "Workspace-Scope (leer = mandantenweit)"
+    },
+    "set_by": {
+      "type": "string",
+      "description": "E-Mail des Administrators, der die Einstellung vorgenommen hat"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "feature",
+    "target_role"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "review_type": {
+      "type": "string",
+      "enum": [
+        "walkthrough",
+        "inspektion",
+        "peer_review",
+        "stakeholder_review",
+        "sonstige"
+      ],
+      "default": "peer_review"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "geplant",
+        "in_review",
+        "abgeschlossen",
+        "abgebrochen"
+      ],
+      "default": "geplant"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "requirement_ids": {
+      "type": "string",
+      "description": "Kommagetrennte Requirement-IDs"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "offen",
+        "freigegeben",
+        "zurueckgewiesen",
+        "ueberarbeitung"
+      ],
+      "default": "offen"
+    },
+    "comments": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "workspace_id",
+    "title"
+  ]
+}
